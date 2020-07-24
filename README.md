@@ -1,5 +1,5 @@
 # ImgScrape
-Scrapes images from a VSCO profile at highest quality using Selenium & BeautifulSoup. Written in Python3.
+VSCO image scraper. Scrapes images on profile at highest quality using Selenium & BeautifulSoup. Written in Python3.
 
 ## Limitations
 - Currently only works on VSCO profiles
