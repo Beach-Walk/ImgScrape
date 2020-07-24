@@ -13,7 +13,7 @@ Scrapes images from a VSCO profile at highest quality using Selenium & Beautiful
 
 ## To install (assuming you have py3)
 1. Install dependencies
-  - pip install -r requirements.txt
+    - pip install -r requirements.txt
 2. Download chrome driver
   - https://chromedriver.chromium.org/
     - Be sure your downloaded driver is the same version as the regular chrome browser you have installed.
