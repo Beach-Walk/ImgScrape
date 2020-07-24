@@ -27,4 +27,4 @@ VSCO image scraper. Scrapes images on profile at highest quality using Selenium 
   - Fix file naming for scraped websites
   - automatically download driver?
   - Fix crash on vsco profiles without "LOAD MORE" button
-  
+  - make headless
