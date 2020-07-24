@@ -8,7 +8,7 @@ VSCO image scraper. Scrapes images on profile at highest quality using Selenium 
 ## Requrements
 - Chrome Browser
 - Chrome Driver
-- Python 3
+- Python 3 & pip
 - Dependencies in requirements.txt
 
 ## To install (assuming you have py3)
