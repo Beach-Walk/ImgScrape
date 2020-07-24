@@ -1,0 +1,1 @@
+Images/Folders with images should appear here when program is run

@@ -1,0 +1,3 @@
+Get chrome driver from link below, download it unzip it and place the .exe in this folder. 
+Make sure its the same version as the chrome browser you currently have installed.
+https://chromedriver.chromium.org/
