@@ -15,10 +15,10 @@ Scrapes images from a VSCO profile at highest quality using Selenium & Beautiful
 1. Install dependencies
     - pip install -r requirements.txt
 2. Download chrome driver
-  - https://chromedriver.chromium.org/
-    - Be sure your downloaded driver is the same version as the regular chrome browser you have installed.
-    you can check chrome version by going to help>about chrome
-  - Unzip and place .exe in drivers/chrome
+    - https://chromedriver.chromium.org/
+     - Be sure your downloaded driver is the same version as the regular chrome browser you have installed.
+      you can check chrome version by going to help>about chrome
+    - Unzip and place .exe in drivers/chrome
   
   ## To Do
   - Add more driver support
