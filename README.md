@@ -17,7 +17,7 @@ VSCO image scraper. Scrapes images on a profile at highest quality using Seleniu
     - https://chromedriver.chromium.org/
      - Be sure your downloaded driver is the same version as the regular chrome browser you have installed.
       you can check chrome version by going to help>about chrome
-    - Unzip and place .exe in drivers/chrome
+    - Unzip and place .exe in the folder: drivers/chrome
   
   ## To Do
   - Add more driver support
