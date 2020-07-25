@@ -10,7 +10,7 @@ VSCO image scraper. Scrapes images on a profile at highest quality using Seleniu
 - Python 3 & pip
 - Dependencies in requirements.txt
 
-## To install (assuming you have py3)
+## To Run (assuming you have py3)
 1. Install dependencies
     - pip install -r requirements.txt
 2. Download chrome driver
