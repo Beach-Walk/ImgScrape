@@ -3,6 +3,7 @@ VSCO image scraper. Scrapes images on a profile at highest quality using Seleniu
 
 ## Limitations
 - Currently only works on VSCO profiles
+- Does not work on VSCO journals. Only gallerys
 
 ## Requrements
 - Chrome Browser
