@@ -1,38 +1,41 @@
+import sys
+
 from selenium import webdriver;
 import time;
 import random;
 import urllib;
 import os;
 import urllib.request
+import re
 from bs4 import BeautifulSoup;
 
 def get_vsco_un(driver):#find username with xpath, if it cant find choose random number
-    findUName = driver.find_elements_by_xpath("/html/body/div/div/main/div/div[1]/div[2]/h3")
-    if len(findUName)>0:
-        uName = driver.find_elements_by_xpath("/html/body/div/div/main/div/div[1]/div[2]/h3")[0].text#get username from text under pfp
+    try:
+        url = driver.current_url
+        uName = re.search(".*\.(?:co|com)\/(?P<userid>.*?)\/.*",url).group('userid')
+
         return uName
-    else:
-        randGalName = str("gallery_"+str(int(random.uniform(0, 10000000))))# generate random number
-        print("Username element not found, using '"+randGalName+"' for folder name...")
+    except:
+        randGalName = str("gallery_" + str(int(random.uniform(0, 10000000))))  # generate random number
+        print("Username element not found, using '" + randGalName + "' for folder name...")
         return randGalName
 
 def get_vsco_imgs(profileLink,driver): #get images and return an array/list of the urls
 
     time.sleep(random.uniform(2, 5))# time to wait
 
-    findLoadButton = driver.find_elements_by_xpath("/html/body/div/div/main/div/div[5]/section/div[2]/button")
-
-    if len(findLoadButton)>0:
-        print("LOAD MORE Button Found...")
-        loadMoreButton = driver.find_elements_by_xpath("/html/body/div/div/main/div/div[5]/section/div[2]/button")[0]  # click load more button
+    try:
+        loadMoreButton = driver.find_element("xpath","/html/body/div[1]/div/main/div/div[3]/section/div[2]")  # click load more button
         loadMoreButton.click()
 
         time.sleep(random.uniform(2, 5))# time to wait
 
         # Get scroll height
         last_height = driver.execute_script("return document.body.scrollHeight")
-
+        print("LOAD MORE Button Found...")
+        print("Scrolling.", end='')
         while True:
+            print(".", end='')
             # Scroll down to bottom
             driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
@@ -42,9 +45,12 @@ def get_vsco_imgs(profileLink,driver): #get images and return an array/list of t
             # Calculate new scroll height and compare with last scroll height
             new_height = driver.execute_script("return document.body.scrollHeight")
             if new_height == last_height:
+                print("DONE")
                 break
             last_height = new_height
-    else:
+
+    except:
+
         print("No LOAD MORE Button Found... Skipping Scroll...")
 
     htmlSource=driver.page_source#get html code from selenium loaded site
