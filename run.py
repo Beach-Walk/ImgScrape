@@ -30,12 +30,15 @@ while menu is True:
         os.mkdir(saveDir)
         print("Directory '"+str(saveDir)+"' Created ")
     else:
-        print("Directory '"+str(saveDir)+"' already exists files may be overwritten...")
+        print("Directory '"+str(saveDir)+"' already exists. Files may be overwritten...")
         time.sleep(3)
 
     for imgs in finalImgUrls:
         print("Saving: "+imgs,end='')
-        imagefile = open(saveDir + "/" + str(count)+".jpg", "wb")
+
+        fname= re.search(".*\.(?:co|com)\/.*\/(?P<fname>.*\.\w{0,5}$)",imgs).group("fname")#parse out file name from URL
+
+        imagefile = open(saveDir + "/" + str(fname), "wb")
         imagefile.write(urllib.request.urlopen(str(imgs)).read())
         imagefile.close()
         print(" DONE!")
